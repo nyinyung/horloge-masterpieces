@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 
 const HeroPanel = ({ watches, scrollToPanel, index}) => {
   return (
-    <div className="relative z-10 h-full w-full overflow-hidden">
+    <div className="relative z-10 h-screen w-full overflow-hidden">
       {/* BACKGROUND DECORATION */}
       <div className="pointer-events-none absolute inset-0 z-0">
         <motion.div
