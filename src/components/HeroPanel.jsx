@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 
 const HeroPanel = ({ watches, scrollToPanel, index}) => {
   return (
-    <div className="relative z-10 h-screen w-full overflow-hidden">
+    <div className="relative z-10 h-full w-full overflow-hidden">
       {/* BACKGROUND DECORATION */}
       <div className="pointer-events-none absolute inset-0 z-0">
         <motion.div
@@ -23,98 +23,88 @@ const HeroPanel = ({ watches, scrollToPanel, index}) => {
         />
       </div>
       {/* THREE WATCHES - FLOATING CINEMATIC COMPOSITION */}
-      <div className="pointer-events-none absolute inset-0 z-10">
-        {/* WATCH 01 - FAR LEFT */}
 
-        <div className="absolute left-[15%] bottom-[10%] h-[30vh] w-[21vw]">
-          <motion.div
-            initial={{
-              opacity: 0,
-              x: -80,
-              rotate: -20,
-              scale: 0.8,
-            }}
-            whileInView={{
-              opacity: 0.65,
-              x: 0,
-              rotate: 0,
-              scale: 1,
-            }}
-            viewport={{ once: false }}
-            transition={{ duration: 1.5, delay: 0.3 }}
-          >
-            <motion.img
-              src={watches[2].image}
-              alt="Classic Watch"
-              animate={{
-                x: ["-2%", "8%", "-2%"],
-                y: [0, 18, 0],
-                rotate: [-0, 10, -0],
-              }}
-              transition={{
-                duration: 14,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="h-[30vh] w-[21vw]  object-contain"
-            />
-          </motion.div>
-        </div>
+<div className="pointer-events-none absolute inset-0 z-10 overflow-hidden">
 
-        {/* WATCH 02 - FAR RIGHT */}
+  {/* WATCH 01 - FAR LEFT */}
+  <div className="absolute left-[8%] bottom-[10%] w-[24vw] h-[20vh] sm:left-[15%] sm:w-[21vw] sm:h-[30vh]">
+    <motion.div
+      initial={{ opacity: 0, x: -80, rotate: -20, scale: 0.8 }}
+      whileInView={{ opacity: 0.65, x: 0, rotate: 0, scale: 1 }}
+      viewport={{ once: false }}
+      transition={{ duration: 1.5, delay: 0.3 }}
+    >
+      <motion.img
+        src={watches[2].image}
+        alt="Classic Watch"
+        animate={{
+          x: ["-2%", "8%", "-2%"],
+          y: [0, 18, 0],
+          rotate: [0, 10, 0],
+        }}
+        transition={{
+          duration: 14,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="w-full h-[20vh] sm:h-[30vh] object-contain"
+      />
+    </motion.div>
+  </div>
 
-        <div className="absolute right-[6%] top-[8%] h-[36vh] w-[25vw]">
-          <motion.div
-            initial={{ opacity: 0, x: 100, y: -50, scale: 0.7 }}
-            whileInView={{ opacity: 0.8, x: 0, y: 0, scale: 1 }}
-            viewport={{ once: false }}
-            transition={{ duration: 1.7, delay: 0.6 }}
-          >
-            <motion.img
-              src={watches[1].image}
-              alt="Chronograph Watch"
-              animate={{
-                x: ["2%", "-8%", "2%"],
-                y: [0, -20, 0],
-                rotate: [14, 7, 14],
-              }}
-              transition={{
-                duration: 17,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="h-[36vh] w-[25vw] object-contain"
-            />
-          </motion.div>
-        </div>
+{/* WATCH 02 - FAR RIGHT */}
+<div className="absolute right-[2%] top-[3%] w-[32vw] h-[22vh] sm:right-[6%] sm:top-[8%] sm:w-[25vw] sm:h-[36vh] z-30">
+  <motion.div
+    initial={{ opacity: 0, x: 60, y: -30, scale: 0.7 }}
+    whileInView={{ opacity: 0.8, x: 0, y: 0, scale: 1 }}
+    viewport={{ once: false }}
+    transition={{ duration: 1.7, delay: 0.6 }}
+  >
+    <motion.img
+      src={watches[1].image}
+      alt="Chronograph Watch"
+      animate={{
+        x: ["0%", "-5%", "0%"],
+        y: [0, -12, 0],
+        rotate: [10, 5, 10],
+      }}
+      transition={{
+        duration: 17,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+      className="w-full h-[22vh] sm:h-[36vh] object-contain"
+    />
+  </motion.div>
+</div>
 
-        {/* WATCH 03 - FOREGROUND */}
+  {/* WATCH 03 - FOREGROUND */}
+  <div className="absolute left-[3%] top-[10%] w-[27vw] h-[24vh] sm:left-[6%] sm:top-[8%] sm:w-[25vw] sm:h-[36vh] md:bottom-[4%] md:left-[6%] z-10">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.6, y: 80 }}
+      whileInView={{ opacity: 0.8, scale: 1, y: 0 }}
+      viewport={{ once: false }}
+      transition={{ duration: 1.8, delay: 0.9 }}
+    >
+      <motion.img
+        src={watches[0].image}
+        alt="Skeleton Watch"
+        animate={{
+          x: ["-4%", "5%", "-4%"],
+          y: [0, -25, 0],
+          rotate: [-12, -5, -12],
+        }}
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="w-full h-[24vh] sm:h-[36vh] object-contain"
+      />
+    </motion.div>
+  </div>
 
-        <div className="absolute left-[6%] top-[8%] h-[36vh] w-[25vw] md:bottom-[4%] md:left-[6%]">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.6, y: 80 }}
-            whileInView={{ opacity: 0.8, scale: 1, y: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 1.8, delay: 0.9 }}
-          >
-            <motion.img
-              src={watches[0].image}
-              alt="Skeleton Watch"
-              animate={{
-                x: ["-4%", "5%", "-4%"],
-                y: [0, -25, 0],
-                rotate: [-12, -5, -12],
-              }}
-              transition={{
-                duration: 12,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="h-[36vh] w-[25vw]  object-contain"
-            />
-          </motion.div>
-        </div>
-      </div>
+</div>
       {/* MAIN TYPOGRAPHY */}
       <div className="absolute left-1/2 top-1/2 z-20 flex w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center px-4 text-center">
         {/* SUBTITLE */}
