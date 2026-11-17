@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh; /* Lebih akurat untuk layar HP/mobile */
+  min-width: 320px;
+  background: #020617;
+  overflow: hidden !important; /* Mematikan total scroll vertikal & horizontal pada halaman utama */
+}
+
+/* NAVIGATION */
+
+.nav-link {
+  position: relative;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: #F5DFB2;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #A77B42;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    #A77B42,
+    #F5DFB2,
+    #A77B42
+  );
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* HORIZONTAL GALLERY (Hanya Scroll Samping, Tanpa Scrollbar Terlihat) */
+
+.gallery-container {
+  overflow-x: auto;
+  overflow-y: hidden !important; /* Memastikan tidak pernah muncul scroll vertikal */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.gallery-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* WATCH IMAGE */
+
+.watch-image {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* AKSESIBILITAS */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}
