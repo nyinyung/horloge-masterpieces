@@ -121,9 +121,9 @@ const Navbar = ({ mobileMenuOpen, setMobileMenuOpen, scrollToPanel }) => {
             className="absolute left-0 top-full flex w-full flex-col gap-5 overflow-hidden border-b border-[#A77B42]/30 bg-[#050810]/95 px-8 py-6 backdrop-blur-xl md:hidden"
           >
             {[
-              { label: "KOLEKSI", panel: 0 },
-              { label: "BANDINGKAN", panel: 3 },
-              { label: "KONTAK VIP", panel: 4 },
+              { label: "COLECTION", panel: 0 },
+              { label: "COMPARE", panel: 3 },
+              { label: "VIP VAULT", panel: 4 },
             ].map((item) => (
               <motion.button
                 key={item.label}
