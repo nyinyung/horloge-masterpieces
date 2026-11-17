@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "motion/react";
 
-const HeroPanel = ({ watches }) => {
+const HeroPanel = ({ watches, scrollToPanel, index}) => {
   return (
     <div className="relative z-10 h-full w-full overflow-hidden">
       {/* BACKGROUND DECORATION */}

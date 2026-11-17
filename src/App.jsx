@@ -84,7 +84,7 @@ const { selectedWatch, openModal: setSelectedWatch, closeModal } = useWatchModal
               <div className="pointer-events-none absolute left-1/2 top-1/2 h-[350px] w-[350px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#A77B42]/10" />
 
               {/* PANEL 00 - OPENING */}
-              {panel.type === "opening" && <HeroPanel watches={watches} />}
+              {panel.type === "opening" && <HeroPanel watches={watches} scrollToPanel={scrollToPanel} index={index} />}
 
               {/* PANEL 01-04 - WATCH COLLECTIONS */}
               {watch && (
